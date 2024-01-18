@@ -84,6 +84,32 @@ OpisKvara VARCHAR (1000) NOT NULL,
 	SET DatumZavrsetka = '2024-01-14'
 	WHERE PrimkaServisaID = 2;
 
+	DELETE FROM ZavrsenServis
+    WHERE PrimkaServisaID IN (SELECT ID
+    FROM PrimkaServisa
+    WHERE 
+	ServisniNalogID IN (SELECT ID
+        FROM ServisniNalozi
+        WHERE KlijentiID = 1
+    )
+); 
+
+    DELETE FROM PrimkaServisa
+    WHERE ServisniNalogID IN (
+    SELECT ID
+    FROM ServisniNalozi
+    WHERE KlijentiID = 1
+);
+    DELETE FROM ServisniNalozi
+    WHERE KlijentiID = 1;
+
+
+    DELETE FROM Klijenti
+    WHERE ID = 1;
+
+
+
+
 
 
 
