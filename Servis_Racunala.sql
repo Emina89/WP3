@@ -107,6 +107,18 @@ OpisKvara VARCHAR (1000) NOT NULL,
     DELETE FROM Klijenti
     WHERE ID = 1;
 
+	SELECT 
+    a.ID AS ServisniNalogID,
+    b.Ime AS ImeKlijenta,
+    b.Prezime AS PrezimeKlijenta,
+    a.DatumNaloga,
+    a.OpisKvara
+FROM 
+    ServisniNalozi a
+INNER JOIN 
+    Klijenti b ON a.KlijentiID = b.ID;
+
+
 
 
 
