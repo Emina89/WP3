@@ -60,14 +60,31 @@ OpisKvara VARCHAR (1000) NOT NULL,
 	VALUES
 	('Prijenosno raèunalo','HP 245n',4),
 	('Stolno raèunalo','Asus mnjdg666',5),
-	('Stolno raèunalo','Asrock MB444',6);*/
+	('Stolno raèunalo','Asrock MB444',6);
 
 	INSERT INTO ZavrsenServis(PrimkaServisaID,DatumZavrsetka,Zavrseno)
 	VALUES
 	(2,'2024-01-13','Zamjenjena matièna ploèa'),
 	(3,'2024-01-09','izgorila matièna ploèa, korisnik ne želi mjenjati'),
-	(4,'2023-10-07','Zamjena memorije i grafièke kartice');
-	
+	(4,'2023-10-07','Zamjena memorije i grafièke kartice'); 
+
+	UPDATE Klijenti
+	SET KontaktBroj= '092-333-444', Email= 'eeee.aa@gmail.com'
+	WHERE ID = 2;
+
+	UPDATE ServisniNalozi
+	SET DatumNaloga = '2024-01-09'
+	WHERE KlijentiID = 2; 
+
+	UPDATE PrimkaServisa
+	SET Vrsta = 'Napajanje', Model = 'jugzzghj333'
+	WHERE ServisniNalogID = 2;
+
+	UPDATE ZavrsenServis
+	SET DatumZavrsetka = '2024-01-14'
+	WHERE PrimkaServisaID = 2;
+
+
 
 
 
